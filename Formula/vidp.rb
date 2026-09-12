@@ -12,7 +12,7 @@ class Vidp < Formula
     ENV["MPV_PREFIX"] = formula_opt_prefix("mpv").to_s
     system "bash", "scripts/build.sh"
     libexec.install "vidp.app"
-    (libexec/"install-app.sh").write <<~'SH'
+    (libexec/"install-app.sh").write <<~SH
       #!/bin/bash
       set -u
 
