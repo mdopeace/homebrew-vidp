@@ -7,7 +7,7 @@ backup="/Applications/.vidp.app.previous"
 
 if [[ -e "${destination}" ]]; then
   bundle_id=$(/usr/libexec/PlistBuddy -c "Print :CFBundleIdentifier" "${destination}/Contents/Info.plist" 2>/dev/null || true)
-  if [[ "$bundle_id" != "com.vidp.vidp" ]]; then
+  if [[ "${bundle_id}" != "com.vidp.vidp" ]]; then
     echo "Warning: skipped /Applications/vidp.app because it belongs to another application." >&2
     exit 0
   fi
