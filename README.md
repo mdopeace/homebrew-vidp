@@ -10,20 +10,18 @@ brew tap mdopeace/vidp
 brew install vidp
 ```
 
-After install, the formula also copies `vidp.app` into `/Applications`:
-
-```sh
-open /Applications/vidp.app
-```
-
-The Homebrew-managed bundle remains available here:
+After install, launch the Homebrew-managed app with:
 
 ```sh
 open "$(brew --prefix)/opt/vidp/libexec/vidp.app"
 ```
 
-Install and upgrade copy only the vidp bundle. If `/Applications` is not
-writable, Homebrew keeps the formula installation intact and prints a warning.
+To install the latest release into `/Applications`, use vidp's **Check for
+Updates** command. The Homebrew formula itself cannot write into
+`/Applications` because formula installation runs in a sandbox.
+
+Homebrew upgrades update the managed bundle under `libexec`; the app updater
+handles the `/Applications` copy.
 
 > **Note:** this tap installs a **formula**, so the command is `brew install vidp`
 > (no `--cask`). A pre-built, notarized cask is not currently provided.
