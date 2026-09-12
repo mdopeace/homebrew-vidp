@@ -12,6 +12,14 @@ class Vidp < Formula
     ENV["MPV_PREFIX"] = formula_opt_prefix("mpv").to_s
     system "bash", "scripts/build.sh"
     libexec.install "vidp.app"
+    libexec.install "scripts/install-app.sh"
+  end
+
+  post_install_steps do
+    run "install-app.sh",
+      args:           ["{{libexec}}/vidp.app"],
+      base:           :libexec,
+      writable_paths: ["/Applications"]
   end
 
   def caveats
@@ -22,8 +30,8 @@ class Vidp < Formula
       To launch it:
         open "#{opt_libexec}/vidp.app"
 
-      Or copy it to /Applications to use like any other app:
-        cp -R "#{opt_libexec}/vidp.app" /Applications/
+      It is also copied automatically to /Applications after install or upgrade.
+      If /Applications is not writable, launch the bundle above or copy it manually.
     EOS
   end
 
