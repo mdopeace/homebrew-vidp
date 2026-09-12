@@ -10,18 +10,20 @@ brew tap mdopeace/vidp
 brew install vidp
 ```
 
-This builds `vidp.app` from source (it requires `mpv` and Xcode Command Line Tools,
-which Homebrew pulls in automatically). After install:
+After install, the formula also copies `vidp.app` into `/Applications`:
+
+```sh
+open /Applications/vidp.app
+```
+
+The Homebrew-managed bundle remains available here:
 
 ```sh
 open "$(brew --prefix)/opt/vidp/libexec/vidp.app"
 ```
 
-Or copy the app into `/Applications`:
-
-```sh
-cp -R "$(brew --prefix)/opt/vidp/libexec/vidp.app" /Applications/
-```
+Install and upgrade copy only the vidp bundle. If `/Applications` is not
+writable, Homebrew keeps the formula installation intact and prints a warning.
 
 > **Note:** this tap installs a **formula**, so the command is `brew install vidp`
 > (no `--cask`). A pre-built, notarized cask is not currently provided.
