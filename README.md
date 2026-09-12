@@ -16,12 +16,17 @@ After install, launch the Homebrew-managed app with:
 open "$(brew --prefix)/opt/vidp/libexec/vidp.app"
 ```
 
-To install the latest release into `/Applications`, use vidp's **Check for
-Updates** command. The Homebrew formula itself cannot write into
-`/Applications` because formula installation runs in a sandbox.
+To copy the app into `/Applications`, replacing the existing `vidp.app` there:
 
-Homebrew upgrades update the managed bundle under `libexec`; the app updater
-handles the `/Applications` copy.
+```sh
+cp -R "$(brew --prefix)/opt/vidp/libexec/vidp.app" /Applications/
+```
+
+The Homebrew formula cannot perform this copy itself because formula
+installation runs in a sandbox. You can also use vidp's **Check for Updates**
+command to install a release into `/Applications`.
+
+Homebrew upgrades update the managed bundle under `libexec`.
 
 > **Note:** this tap installs a **formula**, so the command is `brew install vidp`
 > (no `--cask`). A pre-built, notarized cask is not currently provided.
