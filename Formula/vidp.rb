@@ -1,8 +1,8 @@
 class Vidp < Formula
   desc "Minimal libmpv-based video player for macOS"
   homepage "https://github.com/mdopeace/vidp"
-  url "https://github.com/mdopeace/vidp/archive/refs/tags/v0.11.0.tar.gz"
-  sha256 "9a1fc0df786c7f61c3e7c39fe3ad37e0ac3e12fd7305e13fcd19545a76a58709"
+  url "https://github.com/mdopeace/vidp/archive/refs/tags/v0.11.1.tar.gz"
+  sha256 "0fd0df1447c6103c6f86c02b093cd888e59a370c627fe5c1b1c9cb7bb2bf7bf0"
 
   depends_on :macos
   depends_on "mpv"
