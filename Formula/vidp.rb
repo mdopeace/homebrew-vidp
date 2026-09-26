@@ -22,7 +22,12 @@ class Vidp < Formula
       To launch it:
         open "#{opt_libexec}/vidp.app"
 
-      To install it in /Applications, open vidp and use Check for Updates.
+      To install or update it in /Applications:
+        cp -R "#{opt_libexec}/vidp.app" /Applications/
+
+      This overwrites the files in an existing copy, but won't remove any a
+      new version no longer ships. The app's Check for Updates command
+      replaces the copy outright.
     EOS
   end
 
