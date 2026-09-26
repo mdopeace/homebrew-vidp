@@ -24,6 +24,10 @@ class Vidp < Formula
 
       To install or update it in /Applications:
         cp -R "#{opt_libexec}/vidp.app" /Applications/
+
+      This overwrites the files in an existing copy, but won't remove any a
+      new version no longer ships. The app's Check for Updates command
+      replaces the copy outright.
     EOS
   end
 
