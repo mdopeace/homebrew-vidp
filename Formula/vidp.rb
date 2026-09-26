@@ -22,8 +22,7 @@ class Vidp < Formula
       To launch it:
         open "#{opt_libexec}/vidp.app"
 
-      To install it in /Applications, replacing any existing copy:
-        rm -rf /Applications/vidp.app
+      To install or update it in /Applications:
         cp -R "#{opt_libexec}/vidp.app" /Applications/
     EOS
   end
