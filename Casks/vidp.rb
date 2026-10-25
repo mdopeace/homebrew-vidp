@@ -1,8 +1,8 @@
 # frozen_string_literal: true
 
 cask "vidp" do
-  version "0.16.1"
-  sha256 "d0ffd8a3340dd1a5fa19043b9e8d18afeedffad531fa61f23c8997eb5b3d4b25"
+  version "0.17.0"
+  sha256 "39b902176bedb4c2c88119a2438ef59a5432bc89c87e14b302ca7c6e233ac120"
 
   url "https://github.com/mdopeace/vidp/releases/download/v#{version}/vidp.app.zip"
   name "vidp"
